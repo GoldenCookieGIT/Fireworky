@@ -6,19 +6,19 @@ The base command is ``/fireworky|fwy``, it requires the player to have the ``fir
 
 
 ### Info
-``/fireworky info`` displays a bit of information about the current version
+``/fireworky info`` displays a bit of information about the current version (requires permission ``fireworky.info``)
 
 ### Launch
-``/fireworky launch|l <firework id>`` Launches the firework with given id at the sender's location
+``/fireworky launch|l <firework id>`` Launches the firework with given id at the sender's location. (requires permission ``fireworky.launch``)
 
 ### Launch at location
-``/fireworky launchatlocation|latl <firework id> <world> <x> <y> <z>`` Launches a firework with given id at the specified location
+``/fireworky launchatlocation|latl <firework id> <world> <x> <y> <z>`` Launches a firework with given id at the specified location. (requires permission ``fireworky.launchatlocation``)
 
 ### Add
-``/fireworky add <firework id>`` Creates a firework with a specified id, useful for organizing.
+``/fireworky add <firework id>`` Creates a firework with a specified id, useful for organizing. (requires permission ``fireworky.add``)
 
 ### Reload
-``/fireworky reload`` Reloads the config values
+``/fireworky reload`` Reloads the config values. (requires permission ``fireworky.reload``)
 
 ---
 
