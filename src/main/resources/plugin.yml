@@ -1,0 +1,7 @@
+name: Fireworky
+version: 1.0
+main: me.cookie.fireworky.Fireworky
+author: Cookie
+api-version: 1.13
+libraries:
+  - org.jetbrains.kotlin:kotlin-stdlib:1.7.10
