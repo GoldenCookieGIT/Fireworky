@@ -36,6 +36,6 @@ class Fireworky: JavaPlugin(), Listener {
     }
 
     override fun onDisable() {
-        //TODO: Save firework data
+        fireworkManager.saveFireworks()
     }
 }

@@ -71,7 +71,7 @@ class FireworkyCommand(private val plugin: Fireworky): BaseCommand() {
     @CommandPermission("fireworky.reload")
     @Description("Reload the config")
     fun onReload(sender: CommandSender) {
-        ConfigValues.maxEditsBeforeAutoSave = plugin.config.getInt("max-edits-before-auto-save", 15)
+        ConfigValues.maxEditsBeforeAutoSave = plugin.config.getInt("max-edits-before-auto-saving", 15)
         sender.sendMessage(colorize("&aReloaded the config!"))
     }
 }
