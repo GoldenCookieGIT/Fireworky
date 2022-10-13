@@ -66,7 +66,7 @@ Open the firework editing menu using /fireworky|fwy
 ![guioverview](https://user-images.githubusercontent.com/45347578/195487617-865c2ec4-27d7-4b71-b406-1e0fc5528abe.gif)
 
 
-##Launching Fireworks
+## Launching Fireworks
 
     You can use commands:
 
