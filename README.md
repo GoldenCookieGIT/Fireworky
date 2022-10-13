@@ -40,8 +40,6 @@ For any issues or if in need of support, join [The Bakery](https://discord.gg/mD
 ![fireworkymenu](https://user-images.githubusercontent.com/45347578/195487899-696623d6-7fb3-48c6-aa00-67592d428a7a.gif)
 
 
-In depth info on commands and their required permissions is on the GitHub.
-
 Open the firework editing menu using /fireworky|fwy
   
 
