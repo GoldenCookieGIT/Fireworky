@@ -1,6 +1,8 @@
 # Fireworky
 A GUI based firework editor
 
+Spigot [page](https://www.spigotmc.org/resources/fireworky.105751/)
+
 ## Commands:
 The base command is ``/fireworky|fwy``, it requires the player to have the ``fireworky.command`` to use. By default with no arguments, opens the firework editor.
 
