@@ -18,7 +18,7 @@ class InDepthColorPickerMenu(
     private val editingColor: Color,
     private val pickedColor: Color,
     private val editingColorType: EditingColor
-): MenuGui(6, "Select a color") {
+): MenuGui(6, "Select a color", fireworkManager, fireworkId) {
     private var fwEffect = fireworkEffect
     private val colorsPane = StaticPane(1, 1, 7, 4)
 

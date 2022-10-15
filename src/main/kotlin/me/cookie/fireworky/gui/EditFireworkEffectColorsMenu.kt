@@ -17,7 +17,7 @@ class EditFireworkEffectColorsMenu(
     private val fireworkId: String,
     fireworkEffect: FireworkEffect,
     private val editingColorType: EditingColor
-): MenuGui(3, "Edit Firework Effect Colors") {
+): MenuGui(3, "Edit Firework Effect Colors", fireworkManager, fireworkId) {
     private val effectsPane = StaticPane(1, 1, 7, 1)
     private var fwEffect = fireworkEffect
 

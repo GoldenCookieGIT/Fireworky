@@ -13,7 +13,7 @@ class EditFireworkEffectMenu(
     private val fireworkManager: FireworkManager,
     private val fireworkId: String,
     fireworkEffect: FireworkEffect,
-): MenuGui(3, "Edit Firework Effect") {
+): MenuGui(3, "Edit Firework Effect", fireworkManager, fireworkId) {
     private val effectPane = StaticPane(1, 1, 6, 1)
 
     private var fwEffect = fireworkEffect
@@ -75,7 +75,15 @@ class EditFireworkEffectMenu(
                         setDisplayName(colorize("&rEffect Type"))
                         lore = colorizeList(
                             "&r",
-                            "&r&7Current: &e${fwEffect.type.name}",
+                            "&r&7Current: &e${
+                                if(fwEffect.type.name.split("_").size > 1) {
+                                    val splitEffect = fwEffect.type.name.split("_")
+                                    splitEffect[1].lowercase().replaceFirstChar { it.uppercase() } + " " + splitEffect[0]
+                                        .lowercase().replaceFirstChar { it.uppercase() }
+                                } else {
+                                    fwEffect.type.name.lowercase().replaceFirstChar { it.uppercase() }
+                                }
+                            }",
                             "&r",
                             "&r&7Click to change"
                         )

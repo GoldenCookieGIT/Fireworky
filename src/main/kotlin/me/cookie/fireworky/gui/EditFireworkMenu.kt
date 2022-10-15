@@ -13,7 +13,7 @@ import org.bukkit.inventory.ItemStack
 class EditFireworkMenu(
     private val fireworkManager: FireworkManager,
     private val fireworkId: String,
-): MenuGui(3, "Edit Firework Effects") {
+): MenuGui(3, "Edit Firework Effects", fireworkManager, fireworkId) {
     private val effectsPane = StaticPane(1, 1, 6, 1)
 
     init {

@@ -16,7 +16,7 @@ import java.util.*
 
 class FireworkyMenu(
     private val fireworkManager: FireworkManager,
-): MenuGui(6, "Fireworky Menu") {
+): MenuGui(6, "Fireworky Menu", fireworkManager, "") {
     private var page = 0
     private val lightFiller = filler(Material.GRAY_STAINED_GLASS_PANE)
     private val fireworkPane = StaticPane(1, 1, 7, 4)
