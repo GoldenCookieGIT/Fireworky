@@ -2,6 +2,7 @@ package me.cookie.fireworky
 
 import co.aikar.commands.PaperCommandManager
 import me.cookie.fireworky.commands.FireworkyCommand
+import org.bstats.bukkit.Metrics
 import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
 
@@ -31,6 +32,8 @@ class Fireworky: JavaPlugin(), Listener {
         }
 
         dataFolder.mkdirs()
+
+        Metrics(this, 16673)
 
         fireworkManager.loadFireworks()
     }

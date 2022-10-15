@@ -16,12 +16,14 @@ dependencies {
     compileOnly("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT")
     implementation("co.aikar:acf-paper:0.5.1-SNAPSHOT")
     implementation("com.github.stefvanschie.inventoryframework:IF:0.10.7")
+    implementation("org.bstats:bstats-bukkit:3.0.0")
 }
 
 tasks {
     shadowJar {
         relocate("co.aikar.commands", "me.cookie.fireworky.acf")
         relocate("co.aikar.locales", "me.cookie.fireworky.locales")
+        relocate("org.bstats", "me.cookie.fireworky.bstats")
         relocate("com.github.stefvanschie.inventoryframework", "me.cookie.fireworky.inventoryframework")
         destinationDirectory.set(file("server/plugins"))
     }
