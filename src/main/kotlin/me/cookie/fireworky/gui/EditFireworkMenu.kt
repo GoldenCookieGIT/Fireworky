@@ -90,8 +90,12 @@ class EditFireworkMenu(
                             setDisplayName(colorize("&r&7Effect ${index + 1}"))
                             lore = colorizeList(
                                 "&r&7Type: &e${effect.type.name.lowercase().replaceFirstChar { it.uppercase() }}",
-                                "&r&7Colors: &e${effect.colors.joinToString(", ") { it.toHexString() }}",
-                                "&r&7Fade Colors: &e${effect.fadeColors.joinToString(", ") { it.toHexString() }}",
+                                "&r&7Colors: &e${effect.colors.joinToString(", ") {
+                                    colorize("#" + it.toHexString() + it.toHexString())
+                                }}",
+                                "&r&7Fade Colors: &e${effect.fadeColors.joinToString(", ") {
+                                    colorize("#" + it.toHexString() + it.toHexString())
+                                }}",
                                 "&r&7Flicker: &e${effect.hasFlicker()}",
                                 "&r&7Trail: &e${effect.hasTrail()}",
                                 "&r&cRight click to remove"
