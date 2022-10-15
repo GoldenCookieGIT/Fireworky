@@ -13,9 +13,11 @@ fun colorizeList(vararg strings: String): List<String> {
     return strings.clone().asList().map { colorize(it) }
 }
 
+val regexPattern = Regex("#[A-Fa-f0-9]{6}")
+
 fun colorize(input: String): String {
     return ChatColor.translateAlternateColorCodes('&',
-        input.replace(Regex("#[A-Fa-f0-9]{6}")) {
+        input.replace(regexPattern) {
             net.md_5.bungee.api.ChatColor.of(it.value).toString()
             /*ChatColor.translateAlternateColorCodes(
                 '&',

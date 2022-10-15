@@ -89,15 +89,36 @@ class EditFireworkMenu(
                         itemMeta = itemMeta!!.apply {
                             setDisplayName(colorize("&r&7Effect ${index + 1}"))
                             lore = colorizeList(
-                                "&r&7Type: &e${effect.type.name.lowercase().replaceFirstChar { it.uppercase() }}",
+                                "&r&7Type: &e${
+                                    if(effect.type.name.split("_").size > 1) {
+                                        val splitEffect = effect.type.name.split("_")
+                                        splitEffect[1].lowercase().replaceFirstChar { it.uppercase() } + " " + splitEffect[0]
+                                            .lowercase().replaceFirstChar { it.uppercase() }
+                                    } else {
+                                        effect.type.name.lowercase().replaceFirstChar { it.uppercase() }
+                                    }
+                                }",
                                 "&r&7Colors: &e${effect.colors.joinToString(", ") {
                                     colorize("#" + it.toHexString() + it.toHexString())
                                 }}",
                                 "&r&7Fade Colors: &e${effect.fadeColors.joinToString(", ") {
                                     colorize("#" + it.toHexString() + it.toHexString())
                                 }}",
-                                "&r&7Flicker: &e${effect.hasFlicker()}",
-                                "&r&7Trail: &e${effect.hasTrail()}",
+                                "&r&7Trail: &e${
+                                    if (effect.hasTrail()) {
+                                        colorize("&aENABLED")
+                                    } else {
+                                        colorize("&cDISABLED")
+                                    }
+                                }",
+                                "&r&7Flicker: ${
+                                    if (effect.hasFlicker()) {
+                                        colorize("&aENABLED")
+                                    } else {
+                                        colorize("&cDISABLED")
+                                    }
+                                }",
+                                "",
                                 "&r&cRight click to remove"
                             )
                         }
