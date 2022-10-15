@@ -3,10 +3,7 @@ package me.cookie.fireworky.gui
 import com.github.stefvanschie.inventoryframework.gui.GuiItem
 import com.github.stefvanschie.inventoryframework.pane.Pane
 import com.github.stefvanschie.inventoryframework.pane.StaticPane
-import me.cookie.fireworky.FireworkManager
-import me.cookie.fireworky.colorize
-import me.cookie.fireworky.colorizeList
-import me.cookie.fireworky.size
+import me.cookie.fireworky.*
 import org.bukkit.Color
 import org.bukkit.FireworkEffect
 import org.bukkit.Material
@@ -93,8 +90,8 @@ class EditFireworkMenu(
                             setDisplayName(colorize("&r&7Effect ${index + 1}"))
                             lore = colorizeList(
                                 "&r&7Type: &e${effect.type.name.lowercase().replaceFirstChar { it.uppercase() }}",
-                                "&r&7Colors: &e${effect.colors.joinToString(", ") { it.asRGB().toString() }}",
-                                "&r&7Fade Colors: &e${effect.fadeColors.joinToString(", ") { it.asRGB().toString() }}",
+                                "&r&7Colors: &e${effect.colors.joinToString(", ") { it.asHex() }}",
+                                "&r&7Fade Colors: &e${effect.fadeColors.joinToString(", ") { it.asHex() }}",
                                 "&r&7Flicker: &e${effect.hasFlicker()}",
                                 "&r&7Trail: &e${effect.hasTrail()}",
                                 "&r&cRight click to remove"
