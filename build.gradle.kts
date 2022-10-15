@@ -1,10 +1,13 @@
 plugins {
     kotlin("jvm") version "1.7.10"
     id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("net.minecrell.plugin-yml.bukkit") version "0.5.2"
 }
 
+val ver = "1.1.0"
+
 group = "me.cookie"
-version = "1.1.0"
+version = ver
 
 repositories {
     mavenCentral()
@@ -35,4 +38,15 @@ tasks {
     compileKotlin {
         kotlinOptions.javaParameters = true
     }
+}
+
+bukkit {
+    name = "Fireworky"
+    version = ver
+    main = "me.cookie.fireworky.Fireworky"
+    author = "Cookie"
+    apiVersion = "1.16"
+    libraries = listOf(
+        "org.jetbrains.kotlin:kotlin-stdlib:1.7.10"
+    )
 }
