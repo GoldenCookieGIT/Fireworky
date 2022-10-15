@@ -92,7 +92,7 @@ class EditFireworkEffectColorsMenu(
             effectsPane.addItem(
                 GuiItem(ItemStack(Material.LEATHER_CHESTPLATE).apply {
                     itemMeta = (itemMeta!! as LeatherArmorMeta).apply {
-                        setDisplayName(colorize("&r&7${color.asHex()}"))
+                        setDisplayName(colorize("&r&7${color.toHexString()}"))
                         setColor(color)
                     }
                 }) { event ->

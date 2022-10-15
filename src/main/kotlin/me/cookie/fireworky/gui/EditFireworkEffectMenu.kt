@@ -32,7 +32,7 @@ class EditFireworkEffectMenu(
                     setDisplayName(colorize("&rEffect Colors"))
                     lore = colorizeList(
                         "&r&7Current Colors:",
-                        *fwEffect.colors.map { "&r&7- &e${it.asHex()}" }.toTypedArray()
+                        *fwEffect.colors.map { "&r&7- &e${it.toHexString()}" }.toTypedArray()
                     )
                 }}
             ) { event ->
@@ -51,7 +51,7 @@ class EditFireworkEffectMenu(
                         setDisplayName(colorize("&rFade Colors"))
                         lore = colorizeList(
                             "&r&7Current Fade Colors:",
-                            *fwEffect.fadeColors.map { "&r&7- &e${it.asHex()}" }.toTypedArray()
+                            *fwEffect.fadeColors.map { "&r&7- &e${it.toHexString()}" }.toTypedArray()
                         )
                     }
                 }

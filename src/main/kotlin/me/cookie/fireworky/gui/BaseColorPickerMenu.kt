@@ -43,7 +43,7 @@ class BaseColorPickerMenu(
             colorsPane.addItem(
                 GuiItem(ItemStack(Material.LEATHER_CHESTPLATE).apply {
                     itemMeta = (itemMeta!! as LeatherArmorMeta).apply {
-                        setDisplayName(colorize("&c${color.asHex()}"))
+                        setDisplayName(colorize("&7${color.toHexString()}"))
                         setColor(color)
                     }
                 }) { event ->

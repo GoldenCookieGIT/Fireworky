@@ -44,7 +44,7 @@ class InDepthColorPickerMenu(
                         ).saturation(
                             ((toXY(it, 7).first + 1).toDouble() * 0.14) * white
                         )
-                    setDisplayName(colorize("&c${newColor.asHex()}"))
+                    setDisplayName(colorize("&7${newColor.toHexString()}"))
                     setColor(newColor)
                 }}) { event ->
                     event.isCancelled = true

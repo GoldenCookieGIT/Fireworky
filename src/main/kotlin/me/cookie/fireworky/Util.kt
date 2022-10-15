@@ -52,8 +52,8 @@ fun Color.shiftHue(hueShift: Int): Color {
     return Color.fromRGB(javaColor.red, javaColor.green, javaColor.blue)
 }
 
-fun Color.asHex(): String {
-    return ((red shl 16) + (green shl 8) + blue).toHex()
+fun Color.toHexString(): String {
+    return String.format("%02x%02x%02x", red, green, blue)
 }
 
 fun Color.darken(percent: Double): Color {
@@ -72,10 +72,6 @@ fun Color.saturation(percent: Double): Color {
     val hsb = java.awt.Color.RGBtoHSB(red, green, blue, null)
     val javaColor = java.awt.Color.getHSBColor(hsb[0], percent.toFloat(), hsb[2])
     return Color.fromRGB(javaColor.red, javaColor.green, javaColor.blue)
-}
-
-fun Int.toHex(): String {
-    return Integer.toHexString(this)
 }
 
 var gson: Gson? = null
