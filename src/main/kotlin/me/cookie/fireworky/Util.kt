@@ -19,10 +19,6 @@ fun colorize(input: String): String {
     return ChatColor.translateAlternateColorCodes('&',
         input.replace(regexPattern) {
             net.md_5.bungee.api.ChatColor.of(it.value).toString()
-            /*ChatColor.translateAlternateColorCodes(
-                '&',
-                "&x&${it.value[0]}&${it.value[1]}&${it.value[2]}&${it.value[3]}&${it.value[4]}&${it.value[5]}"
-            )*/
         }
     )
 }

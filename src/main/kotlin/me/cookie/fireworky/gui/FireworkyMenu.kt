@@ -44,6 +44,7 @@ class FireworkyMenu(
                     lore = colorizeList(
                         "&aClick to edit the firework",
                         "&cRight click to remove the firework",
+                        "&1Shift left click to get a physical firework",
                         "&eMiddle click to get the launch command in chat",
                         "&7Firework ID: &e$fireworkId"
                     )
@@ -54,25 +55,37 @@ class FireworkyMenu(
                 if (event.whoClicked !is Player) return@GuiItem
                 val player = event.whoClicked as Player
 
-                if (event.isRightClick) {
-                    fireworkManager.removeFirework(fireworkId)
-                }
-
-                if (event.click == ClickType.MIDDLE) {
-                    val textComponent = TextComponent("Click me to copy launch command").apply {
-                        clickEvent = ClickEvent(
-                            ClickEvent.Action.SUGGEST_COMMAND,
-                            "/fireworky launch $fireworkId"
-                        )
-                        color = ChatColor.YELLOW
+                when (event.click) {
+                    ClickType.LEFT -> {
+                        EditFireworkMenu(fireworkManager, fireworkId).show(player)
+                        return@GuiItem
                     }
+                    ClickType.RIGHT -> {
+                        fireworkManager.removeFirework(fireworkId)
+                    }
+                    ClickType.SHIFT_LEFT -> {
+                        player.inventory.addItem(
+                            ItemStack(Material.FIREWORK_ROCKET).apply {
+                                itemMeta = fireworkManager.fireworks()[fireworkId]!!.apply  {
+                                    lore = colorizeList(
+                                        "&7Firework ID: &e$fireworkId"
+                                    )
+                                }
+                            }
+                        )
+                    }
+                    ClickType.MIDDLE -> {
+                        val textComponent = TextComponent("Click me to copy launch command").apply {
+                            clickEvent = ClickEvent(
+                                ClickEvent.Action.SUGGEST_COMMAND,
+                                "/fireworky launch $fireworkId"
+                            )
+                            color = ChatColor.YELLOW
+                        }
 
-                    player.spigot().sendMessage(textComponent)
-                }
-
-                if (event.isLeftClick) {
-                    EditFireworkMenu(fireworkManager, fireworkId).show(player)
-                    return@GuiItem
+                        player.spigot().sendMessage(textComponent)
+                    }
+                    else -> {}
                 }
 
                 setAndUpdate()
