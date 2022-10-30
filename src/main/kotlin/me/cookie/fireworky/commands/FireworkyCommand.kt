@@ -67,6 +67,17 @@ class FireworkyCommand(private val plugin: Fireworky): BaseCommand() {
             sender.sendMessage(colorize("&cFailed to launch firework $firework, does it exist?"))
     }
 
+    @Subcommand("give")
+    @CommandPermission("fireworky.give")
+    @CommandCompletion("@players @fireworks")
+    @Syntax("<player> <firework>")
+    @Description("Give a player a firework")
+    fun onGive(sender: CommandSender, player: String, firework: String) {
+        val bukkitPlayer = Bukkit.getPlayer(player)
+            ?: return sender.sendMessage(colorize("&cPlayer $player not found"))
+        plugin.fireworkManager.giveFirework(bukkitPlayer, firework)
+    }
+
     @Subcommand("reload")
     @CommandPermission("fireworky.reload")
     @Description("Reload the config")

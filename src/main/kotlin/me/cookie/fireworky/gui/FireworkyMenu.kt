@@ -64,7 +64,8 @@ class FireworkyMenu(
                         fireworkManager.removeFirework(fireworkId)
                     }
                     ClickType.SHIFT_LEFT -> {
-                        player.inventory.addItem(
+                        fireworkManager.giveFirework(player, fireworkId)
+                        /*player.inventory.addItem(
                             ItemStack(Material.FIREWORK_ROCKET).apply {
                                 itemMeta = fireworkManager.fireworks()[fireworkId]!!.apply  {
                                     lore = colorizeList(
@@ -72,7 +73,7 @@ class FireworkyMenu(
                                     )
                                 }
                             }
-                        )
+                        )*/
                     }
                     ClickType.MIDDLE -> {
                         val textComponent = TextComponent("Click me to copy launch command").apply {

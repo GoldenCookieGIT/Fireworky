@@ -3,12 +3,11 @@ package me.cookie.fireworky
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import me.cookie.fireworky.serializers.FireworkMetaSerializer
-import org.bukkit.Bukkit
-import org.bukkit.Color
-import org.bukkit.FireworkEffect
-import org.bukkit.Location
+import org.bukkit.*
 import org.bukkit.entity.EntityType
 import org.bukkit.entity.Firework
+import org.bukkit.entity.Player
+import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.meta.FireworkMeta
 import java.io.File
 import kotlin.random.Random
@@ -35,8 +34,8 @@ class FireworkManager(private val plugin: Fireworky) {
         me.cookie.fireworky.gson = this.gson
     }
 
-    fun addFirework(id: String, firework: FireworkMeta) {
-        fireworks[id] = firework
+    fun addFirework(id: String, fireworkMeta: FireworkMeta) {
+        fireworks[id] = fireworkMeta
         addEdit(id)
     }
 
@@ -153,6 +152,34 @@ class FireworkManager(private val plugin: Fireworky) {
         Color.PURPLE,
         Color.ORANGE
     )
+
+    fun giveFirework(player: Player, fireworkId: String) {
+        // The command can specify multiple commands, so need this to support that.
+        fireworkId.split(" ").forEach { id ->
+            val fireworkMeta = validateFirework(id) ?: return
+
+            player.inventory.addItem(ItemStack(Material.FIREWORK_ROCKET).apply {
+                itemMeta = fireworkMeta.apply {
+                    lore = colorizeList(
+                        "&7Firework ID: &e$id"
+                    )
+                }
+            })
+        }
+
+    }
+
+    private fun validateFirework(fireworkId: String): FireworkMeta? {
+        return if(fireworkId == "random") {
+            dummyFireworkMeta.apply {
+                addEffect(randomEffect())
+                power = (1..7).random()
+            }
+        } else {
+            fireworks[fireworkId]
+        }
+
+    }
 
     private fun randomEffect(): FireworkEffect = FireworkEffect.builder()
             .with(FireworkEffect.Type.values().random())
