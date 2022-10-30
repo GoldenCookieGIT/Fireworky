@@ -76,7 +76,7 @@ class EditFireworkEffectMenu(
                         lore = colorizeList(
                             "&r",
                             "&r&7Current: &e${
-                                if(fwEffect.type.name.split("_").size > 1) {
+                                if (fwEffect.type.name.split("_").size > 1) {
                                     val splitEffect = fwEffect.type.name.split("_")
                                     splitEffect[1].lowercase().replaceFirstChar { it.uppercase() } + " " + splitEffect[0]
                                         .lowercase().replaceFirstChar { it.uppercase() }

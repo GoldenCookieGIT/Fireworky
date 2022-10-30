@@ -32,7 +32,7 @@ abstract class MenuGui(
                 toXY(it, basePane.length).second)
         }
 
-        if(canGoBack){
+        if (canGoBack){
             basePane.addItem(
                 GuiItem(ItemStack(Material.ARROW).apply { itemMeta = itemMeta!!.apply {
                     setDisplayName(colorize("&r&7Back"))
@@ -55,7 +55,7 @@ abstract class MenuGui(
             }, 8, 0
         )
 
-        if(editingFirework.isNotEmpty()) {
+        if (editingFirework.isNotEmpty()) {
             basePane.addItem(
                 GuiItem(ItemStack(Material.FIREWORK_ROCKET).apply { itemMeta = itemMeta!!.apply {
                     setDisplayName(colorize("&eEditing: &r&7$editingFirework"))

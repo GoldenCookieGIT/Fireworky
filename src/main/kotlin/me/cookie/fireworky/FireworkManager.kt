@@ -45,7 +45,7 @@ class FireworkManager(private val plugin: Fireworky) {
     }
 
     fun launchFirework(id: String, location: Location): Boolean {
-        val fireworkMeta = if(id == "random") {
+        val fireworkMeta = if (id == "random") {
             dummyFireworkMeta.apply {
                 addEffect(randomEffect())
                 power = (1..7).random()
@@ -127,7 +127,7 @@ class FireworkManager(private val plugin: Fireworky) {
         editedFireworks.add(id)
         edits++
 
-        if(edits > ConfigValues.maxEditsBeforeAutoSave) {
+        if (edits > ConfigValues.maxEditsBeforeAutoSave) {
             saveFireworks()
             edits = 0
         }
@@ -170,7 +170,7 @@ class FireworkManager(private val plugin: Fireworky) {
     }
 
     private fun validateFirework(fireworkId: String): FireworkMeta? {
-        return if(fireworkId == "random") {
+        return if (fireworkId == "random") {
             dummyFireworkMeta.apply {
                 addEffect(randomEffect())
                 power = (1..7).random()

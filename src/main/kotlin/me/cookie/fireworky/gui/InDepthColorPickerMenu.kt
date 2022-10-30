@@ -22,7 +22,7 @@ class InDepthColorPickerMenu(
     private var fwEffect = fireworkEffect
     private val colorsPane = StaticPane(1, 1, 7, 4)
 
-    private val white = if(pickedColor == Color.WHITE) 0 else 1
+    private val white = if (pickedColor == Color.WHITE) 0 else 1
 
     init {
         colorsPane.priority = Pane.Priority.HIGHEST
@@ -38,7 +38,7 @@ class InDepthColorPickerMenu(
                 GuiItem(ItemStack(Material.LEATHER_CHESTPLATE).apply { itemMeta = (itemMeta!! as LeatherArmorMeta).apply {
                     val newColor = pickedColor
                         .darken(
-                            (toXY(it, 7).second.toDouble() * (0.20 * if(white == 0) 1.35f else 1f))
+                            (toXY(it, 7).second.toDouble() * (0.20 * if (white == 0) 1.35f else 1f))
                                 .coerceAtMost(1.0),
                             // woo magic numbers numbers!!!
                         ).saturation(
@@ -57,7 +57,7 @@ class InDepthColorPickerMenu(
                                 *fwEffect.colors.toMutableList().apply {
                                     var found = false
                                     replaceAll { fwColor ->
-                                        if(fwColor == editingColor && !found) { found = true; color; } else fwColor
+                                        if (fwColor == editingColor && !found) { found = true; color; } else fwColor
                                     }
                                 }.toTypedArray()
                             )
@@ -66,7 +66,7 @@ class InDepthColorPickerMenu(
                                 *fwEffect.fadeColors.toMutableList().apply {
                                     var found = false
                                     replaceAll { fwColor ->
-                                        if(fwColor == editingColor && !found) { found = true; color; } else fwColor
+                                        if (fwColor == editingColor && !found) { found = true; color; } else fwColor
                                     }
                                 }.toTypedArray()
                             )
