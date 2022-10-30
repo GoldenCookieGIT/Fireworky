@@ -45,7 +45,7 @@ bukkit {
     version = ver
     main = "me.cookie.fireworky.Fireworky"
     author = "Cookie"
-    apiVersion = "1.16"
+    apiVersion = "1.16" // Due to the use of the hex colors.
     libraries = listOf(
         "org.jetbrains.kotlin:kotlin-stdlib:1.7.10"
     )

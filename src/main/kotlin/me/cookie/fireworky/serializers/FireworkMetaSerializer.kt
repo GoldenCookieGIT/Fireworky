@@ -57,7 +57,7 @@ class FireworkMetaSerializer(
 
         val fwPower = json.asJsonObject.getAsJsonPrimitive("power").asInt
 
-        return fireworkManager.dummyFireworkMeta.clone()
+        return fireworkManager.dummyFireworkMeta
             .apply {
                 power = fwPower
                 addEffects(fwEffects)

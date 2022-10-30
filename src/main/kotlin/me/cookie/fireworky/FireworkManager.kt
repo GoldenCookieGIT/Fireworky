@@ -4,12 +4,14 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import me.cookie.fireworky.serializers.FireworkMetaSerializer
 import org.bukkit.Bukkit
+import org.bukkit.Color
 import org.bukkit.FireworkEffect
 import org.bukkit.Location
 import org.bukkit.entity.EntityType
 import org.bukkit.entity.Firework
 import org.bukkit.inventory.meta.FireworkMeta
 import java.io.File
+import kotlin.random.Random
 
 class FireworkManager(private val plugin: Fireworky) {
     private val fireworks = mutableMapOf<String, FireworkMeta>()
@@ -44,9 +46,16 @@ class FireworkManager(private val plugin: Fireworky) {
     }
 
     fun launchFirework(id: String, location: Location): Boolean {
-        val fireworkMeta = fireworks[id] ?: return false
-        val firework = location.world!!.spawnEntity(location, EntityType.FIREWORK) as Firework
+        val fireworkMeta = if(id == "random") {
+            dummyFireworkMeta.apply {
+                addEffect(randomEffect())
+                power = (0..7).random()
+            }
+        } else {
+            fireworks[id] ?: return false
+        }
 
+        val firework = location.world!!.spawnEntity(location, EntityType.FIREWORK) as Firework
         firework.fireworkMeta = fireworkMeta
 
         return true
@@ -124,4 +133,32 @@ class FireworkManager(private val plugin: Fireworky) {
             edits = 0
         }
     }
+
+    private val prettyColors = arrayOf(
+        Color.WHITE,
+        Color.SILVER,
+        Color.GRAY,
+        Color.BLACK,
+        Color.RED,
+        Color.MAROON,
+        Color.YELLOW,
+        Color.OLIVE,
+        Color.LIME,
+        Color.GREEN,
+        Color.AQUA,
+        Color.TEAL,
+        Color.BLUE,
+        Color.NAVY,
+        Color.FUCHSIA,
+        Color.PURPLE,
+        Color.ORANGE
+    )
+
+    private fun randomEffect(): FireworkEffect = FireworkEffect.builder()
+            .with(FireworkEffect.Type.values().random())
+            .withColor((0..(1..5).random()).map { prettyColors.random() })
+            .withFade((0..(1..5).random()).map { prettyColors.random() })
+            .trail(Random.nextBoolean())
+            .flicker(Random.nextBoolean())
+            .build()
 }
