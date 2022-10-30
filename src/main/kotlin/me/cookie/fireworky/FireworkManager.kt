@@ -49,7 +49,7 @@ class FireworkManager(private val plugin: Fireworky) {
         val fireworkMeta = if(id == "random") {
             dummyFireworkMeta.apply {
                 addEffect(randomEffect())
-                power = (0..7).random()
+                power = (1..7).random()
             }
         } else {
             fireworks[id] ?: return false
