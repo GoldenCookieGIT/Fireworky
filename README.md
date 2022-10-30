@@ -6,6 +6,7 @@ Spigot [page](https://www.spigotmc.org/resources/fireworky.105751/)
 ## Commands:
 The base command is ``/fireworky|fwy``, it requires the player to have the ``fireworky.command`` to use. By default with no arguments, opens the firework editor.
 
+(wherever you can use a firework id, if you use firework id ``random`` then the firework will be random)
 
 ### Info
 ``/fireworky info`` displays a bit of information about the current version (requires permission ``fireworky.info``)
