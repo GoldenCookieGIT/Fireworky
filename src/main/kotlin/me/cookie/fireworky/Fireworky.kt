@@ -14,13 +14,15 @@ class Fireworky: JavaPlugin(), Listener {
         ConfigValues.maxEditsBeforeAutoSave = config.getInt("max-edits-before-auto-save", 15)
 
         fireworkManager = FireworkManager(this)
+
         server.pluginManager.registerEvents(this, this)
+
         val paperCommandManager = PaperCommandManager(this)
         paperCommandManager.registerCommand(FireworkyCommand(this))
+
         paperCommandManager.commandCompletions.registerAsyncCompletion("fireworks") {
             fireworkManager.fireworks().keys
         }
-
         paperCommandManager.commandCompletions.registerAsyncCompletion("xs") {
             listOf(it.player.location.x.toString())
         }

@@ -47,8 +47,7 @@ abstract class MenuGui(
         basePane.addItem(
             GuiItem(ItemStack(Material.RED_STAINED_GLASS_PANE).apply { itemMeta = itemMeta!!.apply {
                 setDisplayName(colorize("&r&cClose"))
-            }}
-            ) { event ->
+            }}) { event ->
                 event.isCancelled = true
 
                 event.whoClicked.closeInventory()
@@ -59,8 +58,7 @@ abstract class MenuGui(
             basePane.addItem(
                 GuiItem(ItemStack(Material.FIREWORK_ROCKET).apply { itemMeta = itemMeta!!.apply {
                     setDisplayName(colorize("&eEditing: &r&7$editingFirework"))
-                }}
-                ) { event ->
+                }}) { event ->
                     event.isCancelled = true
                     EditFireworkMenu(fireworkManager, editingFirework).show(event.whoClicked)
                 }, 6, 0

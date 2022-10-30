@@ -19,20 +19,16 @@ class BaseColorPickerMenu(
     private val editingColorType: EditingColor
 ): MenuGui(5, "Select a color", fireworkManager, fireworkId) {
     private var fwEffect = fireworkEffect
-    private val colorsPane = StaticPane(1, 1, 7, 3)
+    private val colorsPane = StaticPane(1, 1, 7, 3, Pane.Priority.HIGHEST)
 
     init {
-        colorsPane.priority = Pane.Priority.HIGHEST
-
         addPane(colorsPane)
     }
 
     override fun setItems() {
         colorsPane.fillWith(filler(Material.GRAY_STAINED_GLASS_PANE).item) { event -> event.isCancelled = true }
 
-
         val colors = colorsPane.size
-
 
         (0..colors).forEach {
             var color = Color.RED.shiftHue(360*(it)/colors)
@@ -50,10 +46,17 @@ class BaseColorPickerMenu(
                     event.isCancelled = true
                     InDepthColorPickerMenu(fireworkManager, fireworkId, fwEffect, editingColor, color, editingColorType)
                         .show(event.whoClicked)
-
-                    setAndUpdate()
                 }, toXY(it, 7).first, toXY(it, 7).second
             )
+            basePane.addItem(GuiItem(ItemStack(Material.LIME_DYE).apply {
+                itemMeta = itemMeta!!.apply {
+                    setDisplayName(colorize("&a&lHex Color Picker"))
+                }
+            }) { event ->
+                event.isCancelled = true
+                HexColorPickerMenu(fireworkManager, fireworkId, fwEffect, editingColor, editingColorType)
+                    .show(event.whoClicked)
+            }, 4, 4)
         }
     }
 
