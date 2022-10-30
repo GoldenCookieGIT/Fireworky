@@ -22,6 +22,10 @@ The base command is ``/fireworky|fwy``, it requires the player to have the ``fir
 ### Reload
 ``/fireworky reload`` Reloads the config values. (requires permission ``fireworky.reload``)
 
+### Give
+``/fireworky give <player name> ...<firework id>`` Gives the specified player a firework with that id, can input multiple ids. 
+(requires permission ``fireworky.give``)
+
 ---
 
 To rename a firework, go to the Fireworky folder inside of your plugins folder and rename the associated json file of the firework. Note, only edit the name when the server is not running or else it will be overwritten.
