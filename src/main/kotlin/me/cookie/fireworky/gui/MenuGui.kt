@@ -32,7 +32,7 @@ abstract class MenuGui(
                 toXY(it, basePane.length).second)
         }
 
-        if (canGoBack){
+        if (canGoBack) {
             basePane.addItem(
                 GuiItem(ItemStack(Material.ARROW).apply { itemMeta = itemMeta!!.apply {
                     setDisplayName(colorize("&r&7Back"))
