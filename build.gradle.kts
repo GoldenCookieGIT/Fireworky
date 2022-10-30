@@ -4,7 +4,7 @@ plugins {
     id("net.minecrell.plugin-yml.bukkit") version "0.5.2"
 }
 
-val ver = "1.1.0"
+val ver = "1.2.0"
 
 group = "me.cookie"
 version = ver
