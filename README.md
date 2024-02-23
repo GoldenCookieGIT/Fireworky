@@ -42,7 +42,7 @@ For any issues or if in need of support, join [The Bakery](https://discord.gg/mD
 
 ## Creating fireworks
 
-![fireworkymenu](https://user-images.githubusercontent.com/45347578/195487899-696623d6-7fb3-48c6-aa00-67592d428a7a.gif)
+![CreateFireworks](https://github.com/GoldenCookieGIT/Fireworky/assets/45347578/4e95827d-8021-4b71-9d4f-5f5a80905687)
 
 
 Open the firework editing menu using /fireworky|fwy
@@ -55,19 +55,15 @@ Open the firework editing menu using /fireworky|fwy
 
 ## Editing basic effects
 
-![fireworkyeffectediting](https://user-images.githubusercontent.com/45347578/195487744-f78cd5f0-5891-4d79-9a0f-cb0a07a49ef1.gif)
+![CustomizeEffects](https://github.com/GoldenCookieGIT/Fireworky/assets/45347578/b197dc95-90b0-4549-924e-6b128d2229ea)
 
 
 ## Editing colors
 
-![editingfireworkcolors](https://user-images.githubusercontent.com/45347578/195487580-3777aabe-e783-45cb-b0d9-2ab1cb0a6431.gif)
-![editingfireworkcolors2](https://user-images.githubusercontent.com/45347578/195487574-34ad28b9-0cbb-46ad-ac63-d928cc1b2876.gif)
-
-
-## Overview
-
-![guioverview](https://user-images.githubusercontent.com/45347578/195487617-865c2ec4-27d7-4b71-b406-1e0fc5528abe.gif)
-
+Choose from a vast array of preset colors  
+![PresetColors](https://github.com/GoldenCookieGIT/Fireworky/assets/45347578/0eb370fa-4472-4dec-8f7f-16eb9eded55c)  
+... or choose your own hex color  
+![CustomColor](https://github.com/GoldenCookieGIT/Fireworky/assets/45347578/40c98dbb-905e-4f1b-875e-b01bb9a7e23b)
 
 ## Launching Fireworks
 
@@ -75,13 +71,16 @@ Open the firework editing menu using /fireworky|fwy
 
     /fireworky|fwy launch <firework id>
     /fireworky|fwy launchatloc|latl <firework id> <world> <x> <y> <z>
+Use them in command blocks  
+![LaunchFireworkCommand](https://github.com/GoldenCookieGIT/Fireworky/assets/45347578/ad17c3dc-eb34-4fe8-8761-f94296b6b168)  
 
+Or get a physical firework  
+![LaunchFireworkPhysical](https://github.com/GoldenCookieGIT/Fireworky/assets/45347578/3c7e21da-6b3a-4acf-93c5-e8ef7effc8fc)
 
-![fwylaunch](https://user-images.githubusercontent.com/45347578/195487685-4bcc0aef-d74e-4840-918e-d1665e6371ce.gif)
-![fwylaunchatloc](https://user-images.githubusercontent.com/45347578/195487665-ffb8f100-884c-4115-ba9b-ef7d749732ff.gif)
 
 ---
 
-Thanks for checking the plugin out!
+# Thanks for checking the plugin out!
+![Fireworks](https://github.com/GoldenCookieGIT/Fireworky/assets/45347578/f734adf7-5f9e-4a17-a1ad-cc3214d0cb4b)
 
-    
+  
