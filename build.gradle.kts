@@ -4,7 +4,7 @@ plugins {
     id("net.minecrell.plugin-yml.bukkit") version "0.5.2"
 }
 
-val ver = "1.2.1"
+val ver = "1.2.2"
 
 group = "me.cookie"
 version = ver
@@ -18,7 +18,7 @@ repositories {
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT")
     implementation("co.aikar:acf-paper:0.5.1-SNAPSHOT")
-    implementation("com.github.stefvanschie.inventoryframework:IF:0.10.13")
+    implementation("com.github.stefvanschie.inventoryframework:IF:0.10.14")
     implementation("org.bstats:bstats-bukkit:3.0.0")
 }
 
